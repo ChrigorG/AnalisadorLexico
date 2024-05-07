@@ -21,7 +21,12 @@ namespace AnalisadorLexico
             Console.WriteLine("Informe o diretório do arquivo:");
             file.directoryFile = Console.ReadLine();
             file.ReadFile();
-            Analysis analysis = new Analysis(file.content);
+
+            if (!string.IsNullOrEmpty(file.content))
+            {
+                Analysis analysis = new Analysis(file.content);
+
+            }
         }
     }
 }
