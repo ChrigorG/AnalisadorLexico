@@ -8,11 +8,11 @@ namespace AnalisadorLexico.Model
 {
     class Tokens
     {
-        private String lexeme;
-        private byte token;
-        private String classToken;
-        private String type;
-        private int address;
+        public String lexeme;
+        public byte token;
+        public String classToken;
+        public String type;
+        public int address;
 
         public Tokens(byte token, String lexeme, int address)
         {

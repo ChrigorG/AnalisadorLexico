@@ -25,8 +25,23 @@ namespace AnalisadorLexico
             if (!string.IsNullOrEmpty(file.content))
             {
                 Analysis analysis = new Analysis(file.content);
-
+                analysis.Execute();
+                print(analysis.ListTokens);
             }
+        }
+
+        private static void print(List<Tokens> ListTokens)
+        {
+            Console.WriteLine("__________________________________________________________________");
+            Console.WriteLine("|       Token       |       Lexema       |       Descrição       |");
+            Console.WriteLine("|___________________|____________________|_______________________|");
+            foreach (var item in ListTokens)
+            {
+                Console.WriteLine($"|       {item.token}       |       {item.lexeme}       |       {item.address}       |");
+            }
+            Console.WriteLine("|___________________|____________________|_______________________|");
+            Console.WriteLine("\n");
+            Console.WriteLine("                      *** Finalizado ***                          ");
         }
     }
 }
