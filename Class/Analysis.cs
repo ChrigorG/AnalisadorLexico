@@ -16,14 +16,18 @@ namespace AnalisadorLexico.Model
 
         public void Execute()
         {
-            List<String> listSplitString = MainRegex.ReturnListOfSplitString(this.content);
+            List<string> listSplitString = MainRegex.ReturnListOfSplitString(this.content);
 
             foreach (var item in listSplitString)
             {
-                var dictionary = tableTokens.table.Where(token => token.Key.ToLower().Equals(item.ToLower())).FirstOrDefault();
-                if(dictionary.Value != null)
+                var dictionary = tableTokens.table.FirstOrDefault(token => token.Key.ToLower() == item.ToLower());
+
+                if (dictionary.Value != null && !ListTokens.Any(value => value == dictionary.Value))
+                {
                     ListTokens.Add(dictionary.Value);
+                }
             }
+
         }
     }
 }

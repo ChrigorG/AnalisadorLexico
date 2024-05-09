@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Analysis.cs" />
-    <Compile Include="Model\Base.cs" />
-    <Compile Include="Model\File.cs" />
-    <Compile Include="Model\Regex.cs" />
-    <Compile Include="Model\TableTokens.cs" />
-    <Compile Include="Model\Tokens.cs" />
+    <Compile Include="Class\Analysis.cs" />
+    <Compile Include="Class\Base.cs" />
+    <Compile Include="Class\File.cs" />
+    <Compile Include="Class\Regex.cs" />
+    <Compile Include="Class\TableTokens.cs" />
+    <Compile Include="Class\Tokens.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
