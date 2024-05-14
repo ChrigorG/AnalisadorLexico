@@ -46,6 +46,9 @@
     <Compile Include="Class\Analysis.cs" />
     <Compile Include="Class\Base.cs" />
     <Compile Include="Class\File.cs" />
+    <Compile Include="Class\Helper.cs" />
+    <Compile Include="Class\Mensage.cs" />
+    <Compile Include="Class\PrintTable.cs" />
     <Compile Include="Class\Regex.cs" />
     <Compile Include="Class\TableTokens.cs" />
     <Compile Include="Class\Tokens.cs" />

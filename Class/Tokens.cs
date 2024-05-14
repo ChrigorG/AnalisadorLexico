@@ -8,17 +8,24 @@ namespace AnalisadorLexico.Model
 {
     class Tokens
     {
-        public String lexeme;
-        public byte token;
-        public String classToken;
-        public String type;
+        public string lexeme;
+        public string  token;
+        public string classToken;  
+        public string type;
+        public string description;
         public int address;
 
-        public Tokens(byte token, String lexeme, int address)
+        public Tokens()
         {
-            this.lexeme = lexeme;
-            this.token = token;
+        }
+
+        public Tokens(string token, string lexeme, string type, string description, int address)
+        {
             this.address = address;
+            this.token = token;
+            this.lexeme = lexeme;
+            this.type = type;
+            this.description = description;
         }
     }
 }
