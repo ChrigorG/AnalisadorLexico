@@ -9,7 +9,7 @@ namespace AnalisadorLexico.Class
 {
     class PrintTable
     {
-        private int maxLength { get; } = 3;
+        private int maxLength { get; } = 2;
         private int maxLengthLexeme { get; set; }
         private int maxLengthType { get; set; }
         private int maxLengthToken { get; set; }
