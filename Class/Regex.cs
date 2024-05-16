@@ -11,6 +11,8 @@ namespace AnalisadorLexico.Model
         private const string captureLiteral = @"'(?:[^']|'')*'";
         private const string captureWords = @"\w+";
         private const string captureCharacters = @"(?::=|>=|<=|<>|>|<|=|\+|\-|\*|\/|[:;,.()\[\]{}])";
+
+        private const string captureIdentifier = @"^[A-Za-z][A-Za-z0-9_]*$";
         private static readonly string capture = $"{captureComment}|{captureNumbers}|{captureLiteral}|{captureWords}|{captureCharacters}";
 
 
@@ -49,6 +51,14 @@ namespace AnalisadorLexico.Model
         public static bool IsCharacters(string value)
         {
             Regex regex = new Regex(captureCharacters);
+            if (regex.IsMatch(value))
+                return true;
+            return false;
+        }
+
+        public static bool IsIdentifier(string value)
+        {
+            Regex regex = new Regex(captureIdentifier);
             if (regex.IsMatch(value))
                 return true;
             return false;

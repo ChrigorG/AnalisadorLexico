@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -25,51 +26,84 @@ namespace AnalisadorLexico.Model
             {
                 var dictionary = tableTokens.table.FirstOrDefault(token => token.Key.ToLower() == item.ToLower());
 
-                // Valida se o value é vázio e se o Value já não foi adicionado na lista para não se repetir
+                // Valida se o dictionary é vázio e se o Value já não foi adicionado na lista para não se repetir
                 if (dictionary.Value != null && !ListTokens.Any(value => value == dictionary.Value))
                 {
                     ListTokens.Add(dictionary.Value);
-                } else if (MainRegex.IsNumber(item) && !ListTokens.Any(value => value.token == item))
-                {
-                    ListTokens.Add(new Tokens()
+                } else if (dictionary.Value == null && !ListTokens.Any(value => value.token == item)){
+                    if (MainRegex.IsNumber(item))
                     {
-                        token = item,
-                        lexeme = $"<{item},>",
-                        type = tableTokens.Number,
-                        description = "Valor númerico"
-                    });
-                } else if (MainRegex.IsLiteral(item) && !ListTokens.Any(value => value.token == item))
-                {
-                    ListTokens.Add(new Tokens()
+                        addListTokenNumber(item);
+                    } else if (MainRegex.IsLiteral(item))
                     {
-                        token = item,
-                        lexeme = $"<{item},>",
-                        type = tableTokens.Literal,
-                        description = "É um string"
-                    });
-                } else if (MainRegex.IsCharacters(item) && !ListTokens.Any(value => value.token == item))
-                {
-                    var texto = item.Length <= 20 ? item : item.Substring(0, 20);
-                    ListTokens.Add(new Tokens()
+                        addListTokenLiteral(item);
+                    } else if (MainRegex.IsCharacters(item))
                     {
-                        token = texto,
-                        lexeme = $"<{texto},>",
-                        type = tableTokens.Simbol,
-                        description = "É um caracter especial do Pascal"
-                    });
+                        addListTokenCharacter(item);
+                    }else if (MainRegex.IsIdentifier(item))
+                    { 
+                        addListTokenIdentifier(item);
+                    } else
+                        addListValueUndefined(item);
                 }
-                //} else
-                //{
-                //    ListTokens.Add(new Tokens()
-                //    {
-                //        token = item,
-                //        lexeme = $"<{item},>",
-                //        type = tableTokens.Undefined,
-                //        description = "E caracter não pertence a linguagem"
-                //    });
-                //}
             }
 
+        }
+
+        private void addListTokenNumber(string item)
+        {
+            ListTokens.Add(new Tokens()
+            {
+                token = item,
+                lexeme = $"<{item},>",
+                type = tableTokens.Number,
+                description = "Valor númerico"
+            });
+        }
+
+        private void addListTokenLiteral(string item)
+        {
+            item = item.Length > 10 ? $"{item.Substring(0, 10)}[...]" : item;
+            ListTokens.Add(new Tokens()
+            {
+                token = item,
+                lexeme = $"<{item},>",
+                type = tableTokens.Literal,
+                description = "É um Literal"
+            });
+        }
+
+        private void addListTokenCharacter(string item)
+        {
+            ListTokens.Add(new Tokens()
+            {
+                token = item,
+                lexeme = $"<{item},>",
+                type = tableTokens.Simbol,
+                description = "É um caracter especial"
+            });
+        }
+
+        private void addListTokenIdentifier(string item)
+        {
+            ListTokens.Add(new Tokens()
+            {
+                token = item,
+                lexeme = $"<{item},>",
+                type = tableTokens.Identifier,
+                description = "É um identificador"
+            });
+        }
+
+        private void addListValueUndefined(string item)
+        {
+            ListTokens.Add(new Tokens()
+            {
+                token = item,
+                lexeme = $"<{item},>",
+                type = tableTokens.Undefined,
+                description = "Esse campo não pertence a linguagem"
+            });
         }
     }
 }

@@ -15,11 +15,11 @@ namespace AnalisadorLexico.Model
         public Dictionary<string, Tokens> table = new Dictionary<string, Tokens>();
 
         public readonly int end = -1;
-        public readonly string Identify = "Identificador";
+        public readonly string Identifier = "Identificador";
         public readonly string KeyWord = "Palavra reservada";
-        public readonly string Simbol = "Simbolo";
-        public readonly string Literal = "Literal";
-        public readonly string Number = "Número";
+        public readonly string Simbol = "Simbolo          ";
+        public readonly string Literal = "Literal         ";
+        public readonly string Number = "Número           ";
         public readonly string Undefined = "Desconhecido";
 
         public static byte ABSOLUTE;

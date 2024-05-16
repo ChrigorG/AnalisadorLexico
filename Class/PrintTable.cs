@@ -9,7 +9,7 @@ namespace AnalisadorLexico.Class
 {
     class PrintTable
     {
-        private int maxLength { get; } = 7;
+        private int maxLength { get; } = 3;
         private int maxLengthLexeme { get; set; }
         private int maxLengthType { get; set; }
         private int maxLengthToken { get; set; }
@@ -65,7 +65,7 @@ namespace AnalisadorLexico.Class
         private void PrintHeaderTable()
         {
             // Inicia o print da tabela com as colunas ( ID, Token, Lexema, Tipo, Descrição ) nessa ordem
-            Console.WriteLine("\n\n                                                                                        *** Iniciando ***\n");
+            Console.WriteLine("\n\n                                                                *** Iniciando ***\n");
             Console.WriteLine($"{Helper.ReturnTrace(this.maxLengthTrace + 5)}");
 
             // Para cada linha abaixo é uma coluna da tabela separadas por um pipe
@@ -109,7 +109,9 @@ namespace AnalisadorLexico.Class
                               $"|{Helper.ReturnTrace(this.maxLengthTraceLexeme)}|{Helper.ReturnTrace(this.maxLengthTraceType)}" +
                               $"|{Helper.ReturnTrace(this.maxLengthTraceDescription)}|");
             Console.WriteLine("\n");
-            Console.WriteLine("                                                                                        *** Finalizando ***");
+            Console.WriteLine("                                                                *** Finalizando ***");
+            Console.WriteLine("\r\n\n\"O sucesso é a soma de pequenos esforços repetidos dia após dia.\"");
+            Console.WriteLine("\n                                                                (Robert Collier)");
         }
     }
 }
