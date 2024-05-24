@@ -102,7 +102,7 @@ namespace AnalisadorLexico.Model
                 token = item,
                 lexeme = $"<{item},>",
                 type = tableTokens.Undefined,
-                description = "Esse campo não pertence a linguagem"
+                description = "Campo não permitido na linguagem"
             });
         }
     }

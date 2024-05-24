@@ -105,6 +105,7 @@ namespace AnalisadorLexico.Model
         public static byte PUBLISHED;
         public static byte RAISE;
         public static byte READ;
+        public static byte READLN;
         public static byte READONLY;
         public static byte REAL;
         public static byte RECORD;
@@ -114,6 +115,7 @@ namespace AnalisadorLexico.Model
         public static byte REQUIRES;
         public static byte RESIDENT;
         public static byte RESOURCESTRING;
+        public static byte RESULT;
         public static byte SAFECALL;
         public static byte SEALED;
         public static byte SELF;
@@ -147,6 +149,7 @@ namespace AnalisadorLexico.Model
         public static byte WITH;
         public static byte WORD;
         public static byte WRITE;
+        public static byte WRITELN;
         public static byte XOR;
 
         public static byte AND;
@@ -271,6 +274,7 @@ namespace AnalisadorLexico.Model
             table.Add(nameof(PUBLISHED).ToLower(), new Tokens(nameof(PUBLISHED), $"<{nameof(PUBLISHED)},>", KeyWord, nameof(PUBLISHED).ToLower(), ++end));
             table.Add(nameof(RAISE).ToLower(), new Tokens(nameof(RAISE), $"<{nameof(RAISE)},>", KeyWord, nameof(RAISE).ToLower(), ++end));
             table.Add(nameof(READ).ToLower(), new Tokens(nameof(READ), $"<{nameof(READ)},>", KeyWord, nameof(READ).ToLower(), ++end));
+            table.Add(nameof(READLN).ToLower(), new Tokens(nameof(READLN), $"<{nameof(READLN)},>", KeyWord, nameof(READLN).ToLower(), ++end));
             table.Add(nameof(READONLY).ToLower(), new Tokens(nameof(READONLY), $"<{nameof(READONLY)},>", KeyWord, nameof(READONLY).ToLower(), ++end));
             table.Add(nameof(REAL).ToLower(), new Tokens(nameof(REAL), $"<{nameof(REAL)},>", KeyWord, nameof(REAL).ToLower(), ++end));
             table.Add(nameof(RECORD).ToLower(), new Tokens(nameof(RECORD), $"<{nameof(RECORD)},>", KeyWord, nameof(RECORD).ToLower(), ++end));
@@ -280,6 +284,7 @@ namespace AnalisadorLexico.Model
             table.Add(nameof(REQUIRES).ToLower(), new Tokens(nameof(REQUIRES), $"<{nameof(REQUIRES)},>", KeyWord, nameof(REQUIRES).ToLower(), ++end));
             table.Add(nameof(RESIDENT).ToLower(), new Tokens(nameof(RESIDENT), $"<{nameof(RESIDENT)},>", KeyWord, nameof(RESIDENT).ToLower(), ++end));
             table.Add(nameof(RESOURCESTRING).ToLower(), new Tokens(nameof(RESOURCESTRING), $"<{nameof(RESOURCESTRING)},>", KeyWord, nameof(RESOURCESTRING).ToLower(), ++end));
+            table.Add(nameof(RESULT).ToLower(), new Tokens(nameof(RESULT), $"<{nameof(RESULT)},>", KeyWord, nameof(RESULT).ToLower(), ++end));
             table.Add(nameof(SAFECALL).ToLower(), new Tokens(nameof(SAFECALL), $"<{nameof(SAFECALL)},>", KeyWord, nameof(SAFECALL).ToLower(), ++end));
             table.Add(nameof(SEALED).ToLower(), new Tokens(nameof(SEALED), $"<{nameof(SEALED)},>", KeyWord, nameof(SEALED).ToLower(), ++end));
             table.Add(nameof(SELF).ToLower(), new Tokens(nameof(SELF), $"<{nameof(SELF)},>", KeyWord, nameof(SELF).ToLower(), ++end));
@@ -312,6 +317,7 @@ namespace AnalisadorLexico.Model
             table.Add(nameof(WIDESTRING).ToLower(), new Tokens(nameof(WIDESTRING), $"<{nameof(WIDESTRING)},>", KeyWord, nameof(WIDESTRING).ToLower(), ++end));
             table.Add(nameof(WITH).ToLower(), new Tokens(nameof(WITH), $"<{nameof(WITH)},>", KeyWord, nameof(WITH).ToLower(), ++end));
             table.Add(nameof(WRITE).ToLower(), new Tokens(nameof(WRITE), $"<{nameof(WRITE)},>", KeyWord, nameof(WRITE).ToLower(), ++end));
+            table.Add(nameof(WRITELN).ToLower(), new Tokens(nameof(WRITELN), $"<{nameof(WRITELN)},>", KeyWord, nameof(WRITELN).ToLower(), ++end));
             table.Add(nameof(XOR).ToLower(), new Tokens(nameof(XOR), $"<{nameof(XOR)},>", KeyWord, nameof(XOR).ToLower(), ++end));
 
             // Lista dos operadores Logicos

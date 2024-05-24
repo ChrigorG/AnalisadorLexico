@@ -1,0 +1,7 @@
+C:\Users\Chrigor\Documents\Programing\C#\AnalisadorLexico\AnalisadorLexico\bin\Release\AnalisadorLexico.exe.config
+C:\Users\Chrigor\Documents\Programing\C#\AnalisadorLexico\AnalisadorLexico\bin\Release\AnalisadorLexico.exe
+C:\Users\Chrigor\Documents\Programing\C#\AnalisadorLexico\AnalisadorLexico\bin\Release\AnalisadorLexico.pdb
+C:\Users\Chrigor\Documents\Programing\C#\AnalisadorLexico\AnalisadorLexico\obj\Release\AnalisadorLexico.csproj.AssemblyReference.cache
+C:\Users\Chrigor\Documents\Programing\C#\AnalisadorLexico\AnalisadorLexico\obj\Release\AnalisadorLexico.csproj.CoreCompileInputs.cache
+C:\Users\Chrigor\Documents\Programing\C#\AnalisadorLexico\AnalisadorLexico\obj\Release\AnalisadorLexico.exe
+C:\Users\Chrigor\Documents\Programing\C#\AnalisadorLexico\AnalisadorLexico\obj\Release\AnalisadorLexico.pdb
